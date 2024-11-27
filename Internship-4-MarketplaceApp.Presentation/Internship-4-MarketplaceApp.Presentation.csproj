@@ -58,6 +58,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Actions\SellerActions.cs" />
+    <Compile Include="LoginRegister\Login.cs" />
+    <Compile Include="LoginRegister\Register.cs" />
+    <Compile Include="Helpers\Reader.cs" />
+    <Compile Include="Menu\BuyerMenu.cs" />
+    <Compile Include="Menu\MainMenu.cs" />
+    <Compile Include="Menu\SellerMenu.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -75,6 +82,19 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Internship-4-MarketplaceApp.Data\Internship-4-MarketplaceApp.Data.csproj">
+      <Project>{44638471-c837-47fb-827b-10fc8d3d3f94}</Project>
+      <Name>Internship-4-MarketplaceApp.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Internship-4-MarketplaceApp.Domain\Internship-4-MarketplaceApp.Domain.csproj">
+      <Project>{adf5a781-dbc5-4220-82ed-f9c3c6d0203c}</Project>
+      <Name>Internship-4-MarketplaceApp.Domain</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

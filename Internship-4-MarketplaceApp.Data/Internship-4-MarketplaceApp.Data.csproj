@@ -43,7 +43,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Entities\DbContext.cs" />
+    <Compile Include="Entities\Marketplaces.cs" />
+    <Compile Include="Entities\Models\Cupons.cs" />
     <Compile Include="Entities\Models\Enums\Category.cs" />
     <Compile Include="Entities\Models\Products.cs" />
     <Compile Include="Entities\Models\Transactions.cs" />

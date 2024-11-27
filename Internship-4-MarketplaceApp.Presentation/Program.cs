@@ -1,15 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Internship_4_MarketplaceApp.Presentation.Actions;
+using Internship_4_MarketplaceApp.Presentation.Menu;
 
 namespace Internship_4_MarketplaceApp.Presentation
 {
-    internal class Program
+    public class Program
     {
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
+
+            MainMenu.DisplayMainMenu();
         }
     }
 }
