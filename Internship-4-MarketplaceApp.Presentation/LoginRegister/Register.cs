@@ -30,13 +30,20 @@ namespace Internship_4_MarketplaceApp.Presentation.Actions
             Console.Write("Unesi ime: ");
             var name = Reader.StringInput();
 
-            Console.Write("Unesi pocetni iznos: ");
-            float.TryParse(Console.ReadLine(), out var amount);
-            while (amount <= 0)
+            Console.Write("Registriraj se kao:\n1. Prodavac\n2. Kupac\n");
+            var userType = Reader.NumInput(1, 2);
+
+            float amount = 0;
+            if (userType == 2)
             {
-                Console.WriteLine("Neispravan unos!");
-                Console.Write("Unesi ponovno: ");
+                Console.Write("Unesi pocetni iznos: ");
                 float.TryParse(Console.ReadLine(), out amount);
+                while (amount <= 0)
+                {
+                    Console.WriteLine("Neispravan unos!");
+                    Console.Write("Unesi ponovno: ");
+                    float.TryParse(Console.ReadLine(), out amount);
+                }
             }
 
             Console.WriteLine($"Jeste li sigurni da želite registrirati {name} - {email} (y/n): ");
@@ -47,7 +54,10 @@ namespace Internship_4_MarketplaceApp.Presentation.Actions
                 return;
             }
 
-            BuyerRepository.AddNewUser(marketplace, email, name, amount);
+            if (userType == 1)
+                SellerRepository.AddNewUser(marketplace, email, name);
+            else
+                BuyerRepository.AddNewUser(marketplace, email, name, amount);
 
             Console.WriteLine("Uspješno ste se registrirali\n\nPritisni enter za nastavak");
 

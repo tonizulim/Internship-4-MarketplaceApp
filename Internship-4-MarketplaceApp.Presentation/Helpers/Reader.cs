@@ -57,7 +57,7 @@ namespace Internship_4_MarketplaceApp.Presentation.Helpers
         public static string EmailInput()
         {
             var email = Console.ReadLine().ToLower();
-            while (string.IsNullOrWhiteSpace(email) || int.TryParse(email, out _) || !email.Contains("@") || !email.Contains(".") || email.EndsWith("."))
+            while (string.IsNullOrWhiteSpace(email) || int.TryParse(email, out _) || !email.Contains("@") || !email.Contains(".") || email.EndsWith(".") || email.Contains("@."))
             {
                 Console.Write("Neispravan unos! Unesi ponovno: ");
                 email = Console.ReadLine().ToLower();

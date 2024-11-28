@@ -50,7 +50,7 @@ namespace Internship_4_MarketplaceApp.Domain.Repositorioes
 
         public static void ReturnItem(Marketplaces marketplace, Guid buyerId, Guid productId)
         {
-            var transaction = marketplace.Transactions.FirstOrDefault(transactions => transactions.BuyerId == buyerId && transactions.ProductId == productId);
+            var transaction = marketplace.Transactions.LastOrDefault(transactions => transactions.BuyerId == buyerId && transactions.ProductId == productId);
             
             var returnProduct = marketplace.Products.FirstOrDefault(products => products.Id == productId);
             var buyer = marketplace.Buyers.FirstOrDefault(buyers => buyers.Id == buyerId);

@@ -19,7 +19,7 @@ namespace Internship_4_MarketplaceApp.Presentation.Menu
             do
             {
                 Console.Clear();
-                Console.WriteLine("Kupac menu");
+                Console.WriteLine($"Kupac menu {marketplace.Buyers.FirstOrDefault(buyer => buyer.Id == buyerId).Saldo}");
                 Console.WriteLine("1. Pregled proizvoda\n2. Kupi proizvod\n3. Vrati proizvod\n4. Dodavaj proizvod u listu omiljenih\n5. Pregled povijesti kupljenih proizvoda\n6. Pregled liste omiljenih proizvoda\n7. Odjava ");
 
 

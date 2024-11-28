@@ -29,6 +29,12 @@ namespace Internship_4_MarketplaceApp.Presentation.Actions
                 return;
             }
 
+            if (SellerRepository.CheckIfSellerExists(marketplace, email, name))
+            {
+                SellerMenu.DisplaySellerMenu(marketplace, email);
+                return;
+            }
+
             Console.WriteLine("Korisnik ne postoji\n\nPritisni enter za nastavak");
             Console.ReadLine();
         }

@@ -1,10 +1,13 @@
 ﻿using Internship_4_MarketplaceApp.Data.Entities;
 using Internship_4_MarketplaceApp.Data.Entities.Models.Users;
+using Internship_4_MarketplaceApp;
+
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 
 namespace Internship_4_MarketplaceApp.Domain.Repositorioes
 {
@@ -45,5 +48,7 @@ namespace Internship_4_MarketplaceApp.Domain.Repositorioes
             var newBuyer = new Buyers(name, email, amount);
             marketplace.Buyers.Add(newBuyer);
         }
+
+        
     }
 }

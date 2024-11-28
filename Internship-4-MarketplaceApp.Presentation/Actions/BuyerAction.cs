@@ -50,7 +50,7 @@ namespace Internship_4_MarketplaceApp.Presentation.Actions
             }
 
             float discount = 0;
-            Console.Write("Imete li kupone (y/n): ");
+            Console.Write("Imate li kupone (y/n): ");
             if (Reader.YNanswer())
             {
                 Console.Write("Unesite kod kupona: ");
@@ -112,7 +112,7 @@ namespace Internship_4_MarketplaceApp.Presentation.Actions
             Console.Write("\nUnesi id proizvoda koji zelite vratiti: ");
             var productId = Reader.StringInput();
 
-            var productToReturn = marketplace.Products.FirstOrDefault(product => product.Id.ToString() == productId);
+            var productToReturn = marketplace.Products.LastOrDefault(product => product.Id.ToString() == productId);
 
             if (productToReturn == null)
             {
@@ -141,8 +141,8 @@ namespace Internship_4_MarketplaceApp.Presentation.Actions
                 .Select(transaction => transaction.ProductId)
                 .ToList();
 
-            var boughtProducts = marketplace.Products
-                .Where(product => boughtProductsId.Contains(product.Id))
+            var boughtProducts = boughtProductsId
+                .Select(productId => marketplace.Products.FirstOrDefault(product => product.Id == productId))
                 .ToList();
 
             foreach (var product in boughtProducts)
