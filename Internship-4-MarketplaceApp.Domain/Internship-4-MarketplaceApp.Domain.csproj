@@ -46,8 +46,10 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositorioes\BuyerRepository.cs" />
+    <Compile Include="Repositorioes\CuponsRepository.cs" />
     <Compile Include="Repositorioes\ProductRepository.cs" />
     <Compile Include="Repositorioes\SellerRepository.cs" />
+    <Compile Include="Repositorioes\TransactionRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

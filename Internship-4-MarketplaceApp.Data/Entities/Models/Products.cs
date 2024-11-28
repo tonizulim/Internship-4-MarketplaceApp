@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Permissions;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web;
 using Internship_4_MarketplaceApp.Data.Entities.Models.Enums;
 
 namespace Internship_4_MarketplaceApp.Data.Entities.Models
@@ -12,22 +14,30 @@ namespace Internship_4_MarketplaceApp.Data.Entities.Models
         public Guid Id { get; }
         public string Name { get; }
         public string Description { get; }
-        public int Price { get; }
-        public bool Sold { get; set; }
+        public float Price { get; set; }
         public Guid SellerId { get; }
-        public Category ItemCategory { get; }
-        public int Rating { get; set; }
+        public Category Category { get; }
+        public bool IsSold { get; set; }
 
-        public Products(string name, string description, int price, Guid seller, Category itemCategory)
+        public Products(string name, string description, float price, Guid sellerId, Category category) 
         {
             Id = Guid.NewGuid();
             Name = name;
             Description = description;
             Price = price;
-            Sold = false;
-            SellerId = seller;
-            ItemCategory = itemCategory;
-            Rating = 0;
+            SellerId = sellerId;
+            Category = category;
+            IsSold = false;
+        }
+        public Products(string name, string description, float price, Guid sellerId, Category category, bool isSold)
+        {
+            Id = Guid.NewGuid();
+            Name = name;
+            Description = description;
+            Price = price;
+            SellerId = sellerId;
+            Category = category;
+            IsSold = isSold;
         }
     }
 }

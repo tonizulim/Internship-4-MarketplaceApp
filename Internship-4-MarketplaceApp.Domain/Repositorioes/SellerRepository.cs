@@ -11,24 +11,14 @@ namespace Internship_4_MarketplaceApp.Domain.Repositorioes
 {
     public class SellerRepository
     {
-        public static bool CheckIfSellerExists(string email, string name, Marketplaces marketplace)
-        {
-            foreach (var seller in marketplace.Sellers)
-            {
-                if (seller.Email == email && seller.Name == name)
-                    return true;
-            }
-            return false;
-        }
-
-        public static Guid FindSellerGuid(string email, Marketplaces marketplace)
+        public static bool CheckIfSellerEmailExists(Marketplaces marketplace, string email)
         {
             foreach (var seller in marketplace.Sellers)
             {
                 if (seller.Email == email)
-                    return seller.Id;
+                    return true;
             }
-            return Guid.Empty;
+            return false;
         }
 
     }

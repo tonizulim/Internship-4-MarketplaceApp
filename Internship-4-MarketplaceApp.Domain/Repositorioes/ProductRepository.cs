@@ -11,17 +11,12 @@ namespace Internship_4_MarketplaceApp.Domain.Repositorioes
 {
     public class ProductRepository
     {
-        public static void AddProduct(Marketplaces marketplace, string name, string description, int price, Category category, Guid sellerId)
-        {
-            var product = new Products(name, description, price, sellerId, category);
 
-            marketplace.Products.Add(product);
-        }
-
-        public static List<Products> GetSellerProducts(Marketplaces marketplace, Guid sellerId)
+        public static List<Products> ProductsForSale(Marketplaces marketplace)
         {
-            List<Products> SellerProducts = marketplace.Products.Where(product => product.SellerId == sellerId).ToList();
-            return SellerProducts;
+            var products = marketplace.Products.Where(product => product.IsSold == false).ToList();
+
+            return products;
         }
     }
 }

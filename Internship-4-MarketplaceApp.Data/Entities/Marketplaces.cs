@@ -13,9 +13,8 @@ namespace Internship_4_MarketplaceApp.Data.Entities
     {
         public List<Sellers> Sellers { get; set; } = DatabaseSeeder.Sellers;
         public List<Products> Products { get; set; } = DatabaseSeeder.Products;
-        public List<Transaction> Transactions { get; set; } = DatabaseSeeder.Transactions;
         public List<Buyers> Buyers { get; set; } = DatabaseSeeder.Buyers;
-
+        public List<Transaction> Transactions { get; set; } = DatabaseSeeder.Transactions;
         public List<Cupons> Cupons { get; set; } = DatabaseSeeder.Cupons;
 
     }

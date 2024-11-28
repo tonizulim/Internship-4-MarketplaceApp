@@ -11,9 +11,7 @@ namespace Internship_4_MarketplaceApp.Presentation.Menu
 {
     public class MainMenu
     {
-        public static readonly Marketplaces marketplace = new Marketplaces();
-
-        public static void DisplayMainMenu()
+        public static void DisplayMainMenu(Marketplaces marketplace)
         {
             int option = -1;
             do
@@ -29,7 +27,7 @@ namespace Internship_4_MarketplaceApp.Presentation.Menu
                 switch (option)
                 {
                     case 1:
-                        Register.RegisterUser(marketplace);
+                        Register.DisplayRegister(marketplace);
                         break;
                     case 2:
                         Login.DisplayLogIn(marketplace);
@@ -40,7 +38,6 @@ namespace Internship_4_MarketplaceApp.Presentation.Menu
                         break;
                 }
             } while (option != 3);
-
         }
     }
 }

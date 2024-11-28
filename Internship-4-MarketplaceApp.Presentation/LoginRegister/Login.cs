@@ -12,7 +12,7 @@ namespace Internship_4_MarketplaceApp.Presentation.Actions
 {
     public class Login
     {
-        public static void DisplayLogIn(Marketplaces Marketplace)
+        public static void DisplayLogIn(Marketplaces marketplace)
         {
             Console.Clear();
             Console.WriteLine("Prijavi se");
@@ -23,16 +23,9 @@ namespace Internship_4_MarketplaceApp.Presentation.Actions
             Console.Write("Unesi ime: ");
             var name = Reader.StringInput();
 
-
-            if (SellerRepository.CheckIfSellerExists(email, name, Marketplace))
+            if (BuyerRepository.CheckIfBuyerExists(marketplace, email, name))
             {
-                SellerMenu.DisplaySellerMenu(email, Marketplace);
-                return;
-            }
-
-            if (BuyerRepository.CheckIfBuyerExists(email, name, Marketplace))
-            {
-                BuyerMenu.DisplayBuyerMenu(email, Marketplace);
+                BuyerMenu.DisplayBuyerMenu(marketplace, email);
                 return;
             }
 

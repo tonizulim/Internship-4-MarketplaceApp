@@ -52,6 +52,7 @@ namespace Internship_4_MarketplaceApp.Presentation.Helpers
             }
             return userInput;
         }
+        
 
         public static string EmailInput()
         {

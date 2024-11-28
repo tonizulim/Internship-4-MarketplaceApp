@@ -1,4 +1,5 @@
 ﻿using Internship_4_MarketplaceApp.Data.Entities;
+using Internship_4_MarketplaceApp.Data.Entities.Models.Users;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,7 +10,7 @@ namespace Internship_4_MarketplaceApp.Domain.Repositorioes
 {
     public class BuyerRepository
     {
-        public static bool CheckIfBuyerExists(string email, string name, Marketplaces marketplace)
+        public static bool CheckIfBuyerExists(Marketplaces marketplace, string email, string name)
         {
             foreach (var buyer in marketplace.Buyers)
             {
@@ -17,6 +18,32 @@ namespace Internship_4_MarketplaceApp.Domain.Repositorioes
                     return true;
             }
             return false;
+        }
+
+        public static bool CheckIfBuyerEmailExists(Marketplaces marketplace, string email)
+        {
+            foreach (var buyer in marketplace.Buyers)
+            {
+                if (buyer.Email == email)
+                    return true;
+            }
+            return false;
+        }
+
+        public static Guid FindBuyerGuid(Marketplaces marketplace, string email)
+        {
+            foreach (var buyer in marketplace.Buyers)
+            {
+                if (buyer.Email == email)
+                    return buyer.Id;
+            }
+            return Guid.Empty;
+        }
+
+        public static void AddNewUser(Marketplaces marketplace, string email, string name, float amount)
+        {
+            var newBuyer = new Buyers(name, email, amount);
+            marketplace.Buyers.Add(newBuyer);
         }
     }
 }

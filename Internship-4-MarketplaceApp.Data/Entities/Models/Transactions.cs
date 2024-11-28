@@ -8,17 +8,22 @@ namespace Internship_4_MarketplaceApp.Data.Entities.Models
 {
     public class Transaction
     {
-        public Guid ProductID { get; }
-        public Guid BuyerID { get; }
-        public Guid SellerID { get; }
-        public DateTime Date { get; }
+        public Guid Id { get; }
+        public Guid BuyerId { get; set; }
+        public Guid SellerId { get; set; }
+        public Guid ProductId { get; set; }
+        public DateTime Date { get; set; }
+        public float Price { get; set; }
 
-        public Transaction(Guid productID, Guid buyerID, Guid sellerID)
+        public Transaction(Guid buyerId, Guid sellerId, Guid productId, float price)
         {
-            ProductID = productID;
-            BuyerID = buyerID;
-            SellerID = sellerID;
+            Id = Guid.NewGuid();
+            BuyerId = buyerId;
+            SellerId = sellerId;
+            ProductId = productId;
             Date = DateTime.Now;
+            Price = price;
         }
+
     }
 }

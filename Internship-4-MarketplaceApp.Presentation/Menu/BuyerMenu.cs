@@ -1,4 +1,6 @@
 ﻿using Internship_4_MarketplaceApp.Data.Entities;
+using Internship_4_MarketplaceApp.Domain.Repositorioes;
+using Internship_4_MarketplaceApp.Presentation.Actions;
 using Internship_4_MarketplaceApp.Presentation.Helpers;
 using System;
 using System.Collections.Generic;
@@ -9,25 +11,43 @@ using System.Threading.Tasks;
 namespace Internship_4_MarketplaceApp.Presentation.Menu
 {
     internal class BuyerMenu
-    {
-        public static void DisplayBuyerMenu(string email, Marketplaces marketplace)
+    {     
+        public static void DisplayBuyerMenu(Marketplaces marketplace, string email)
         {
-            int option = 0;
+            var buyerId = BuyerRepository.FindBuyerGuid(marketplace, email);
+            int odabir = 0;
             do
             {
                 Console.Clear();
-                Console.WriteLine("Kupac");
-                Console.WriteLine("1.");
-                option = Reader.NumInput(1, 6);
+                Console.WriteLine("Kupac menu");
+                Console.WriteLine("1. Pregled proizvoda\n2. Kupi proizvod\n3. Vrati proizvod\n4. Dodavaj proizvod u listu omiljenih\n5. Pregled povijesti kupljenih proizvoda\n6. Pregled liste omiljenih proizvoda\n7. Odjava ");
 
-                switch (option)
+
+                odabir = Reader.NumInput(1,7);
+                switch (odabir)
                 {
-                    
+                    case 1:
+                        BuyerAction.ShowProductsForSale(marketplace);
+                        break;
+                    case 2:
+                        BuyerAction.BuyProduct(marketplace, buyerId);
+                        break;
+                    case 3:
+                        BuyerAction.ReturnProduct(marketplace, buyerId);
+                        break;
+                    case 4:
+                        BuyerAction.AddFavProduct(marketplace, buyerId);
+                        break;
+                    case 5:
+                        BuyerAction.ShowBoughtProducts(marketplace, buyerId);
+                        break;
+                    case 6:
+                        BuyerAction.ShowFavProducts(marketplace, buyerId);
+                        break;
                     default:
                         break;
                 }
-
-            } while (option != 6);
+            } while (odabir != 7);
         }
     }
 }

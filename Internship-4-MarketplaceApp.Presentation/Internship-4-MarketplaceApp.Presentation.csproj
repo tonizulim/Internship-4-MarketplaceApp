@@ -58,6 +58,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Actions\BuyerAction.cs" />
     <Compile Include="Actions\SellerActions.cs" />
     <Compile Include="LoginRegister\Login.cs" />
     <Compile Include="LoginRegister\Register.cs" />
