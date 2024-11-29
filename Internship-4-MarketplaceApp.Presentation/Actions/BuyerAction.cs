@@ -58,14 +58,17 @@ namespace Internship_4_MarketplaceApp.Presentation.Actions
                 if (!string.IsNullOrEmpty(CuponeCode))
                 {
                     discount = CuponsRepository.GetDiscount(marketplace, CuponeCode, Targetproduct.Category) / 100;
+                    discount = 1 - discount;
                 }
-                if (discount == 0)
+
+                if (discount == 1)
                 {
                     Console.WriteLine("Neispravan kupon ili ne odgovara kategoriji proizvoda");
+                    discount = 0;
                 }
                 else
                 {
-                    Console.WriteLine($"Kupon od {discount * 100}% je primjenjen");
+                    Console.WriteLine($"Kupon od {100 - discount * 100}% je primjenjen");
                 }
             }
 

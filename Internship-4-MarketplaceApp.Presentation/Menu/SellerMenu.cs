@@ -20,8 +20,8 @@ namespace Internship_4_MarketplaceApp.Presentation.Menu
             {
                 Console.Clear();
                 Console.WriteLine($"Prodavač zarada {marketplace.Sellers.FirstOrDefault(seller => seller.Id == sellerId).Earned}");
-                Console.WriteLine("1. Dodaj proizvod\n2. Pregled svih proizvoda u vlasništvu prodavača\n3. Pregled prodanih proizvoda po kategoriji\n4. Pregled zarade u određenom vremenskom razdoblju\n5. Odjava");
-                option = Reader.NumInput(1, 5);
+                Console.WriteLine("1. Dodaj proizvod\n2. Pregled svih proizvoda u vlasništvu prodavača\n3. Pregled prodanih proizvoda po kategoriji\n4. Pregled zarade u određenom vremenskom razdoblju\n5. Uredi cijenu proizvoda\n6. Odjava");
+                option = Reader.NumInput(1, 6);
                 switch (option)
                 {
                     case 1:
@@ -34,11 +34,15 @@ namespace Internship_4_MarketplaceApp.Presentation.Menu
                         SellerActions.SoldProductsByCategory(marketplace, sellerId);
                         break;
                     case 4:
+                        SellerActions.ProfitInTimeRange(marketplace, sellerId);
+                        break;
+                    case 5:
+                        SellerActions.EditProductPrice(marketplace, sellerId);
                         break;
                     default:
                         break;
                 }
-            } while (option != 5);
+            } while (option != 6);
         }
     }
 }

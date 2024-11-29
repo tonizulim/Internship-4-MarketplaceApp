@@ -59,6 +59,7 @@ namespace Internship_4_MarketplaceApp.Domain.Repositorioes
             buyer.Saldo += transaction.Price*(float)0.8;
             seller.Earned -= transaction.Price * (float)0.8;
             returnProduct.IsSold = false;
+            transaction.IsReturned = true;
 
             return;
         }

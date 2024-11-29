@@ -52,9 +52,9 @@ namespace Internship_4_MarketplaceApp.Data.Seeds
 
         public static readonly List<Transaction> Transactions = new List<Transaction>
         {
-            new Transaction(Buyers[0].Id, Sellers[0].Id, Products[0].Id, 5000),
-            new Transaction(Buyers[0].Id, Sellers[0].Id, Products[1].Id, 100),
-            new Transaction(Buyers[0].Id, Sellers[0].Id, Products[2].Id, 50)
+            new Transaction(Buyers[0].Id, Sellers[0].Id, Products[0].Id, 5000, DateTime.Parse("2023-10-11")),
+            new Transaction(Buyers[0].Id, Sellers[0].Id, Products[1].Id, 100, DateTime.Parse("2021-10-11")),
+            new Transaction(Buyers[0].Id, Sellers[0].Id, Products[2].Id, 50, DateTime.Parse("2022-10-11"))
 
         };
 

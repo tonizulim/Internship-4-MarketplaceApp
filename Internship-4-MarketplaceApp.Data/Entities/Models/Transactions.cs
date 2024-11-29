@@ -15,6 +15,8 @@ namespace Internship_4_MarketplaceApp.Data.Entities.Models
         public DateTime Date { get; set; }
         public float Price { get; set; }
 
+        public bool IsReturned { get; set; }
+
         public Transaction(Guid buyerId, Guid sellerId, Guid productId, float price)
         {
             Id = Guid.NewGuid();
@@ -23,6 +25,17 @@ namespace Internship_4_MarketplaceApp.Data.Entities.Models
             ProductId = productId;
             Date = DateTime.Now;
             Price = price;
+            IsReturned = false;
+        }
+        public Transaction(Guid buyerId, Guid sellerId, Guid productId, float price, DateTime date)
+        {
+            Id = Guid.NewGuid();
+            BuyerId = buyerId;
+            SellerId = sellerId;
+            ProductId = productId;
+            Date = date;
+            Price = price;
+            IsReturned = false;
         }
 
     }
