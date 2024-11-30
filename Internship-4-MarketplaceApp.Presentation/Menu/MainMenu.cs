@@ -2,10 +2,7 @@
 using Internship_4_MarketplaceApp.Presentation.Actions;
 using Internship_4_MarketplaceApp.Presentation.Helpers;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace Internship_4_MarketplaceApp.Presentation.Menu
 {
@@ -17,10 +14,7 @@ namespace Internship_4_MarketplaceApp.Presentation.Menu
             do
             {
                 Console.Clear();
-                Console.WriteLine("Marketplace");
-                Console.WriteLine("1. Registracija");
-                Console.WriteLine("2. Prijava");
-                Console.WriteLine("3. Izlaz");
+                Console.WriteLine("Marketplace\n1. Registracija\n2. Prijava\n3. Izlaz");
                 Console.Write("Odaberi opciju: ");
 
                 option = Reader.NumInput(1, 3);
@@ -31,8 +25,6 @@ namespace Internship_4_MarketplaceApp.Presentation.Menu
                         break;
                     case 2:
                         Login.DisplayLogIn(marketplace);
-                        break;
-                    case 3:
                         break;
                     default:
                         break;

@@ -3,10 +3,6 @@ using Internship_4_MarketplaceApp.Domain.Repositorioes;
 using Internship_4_MarketplaceApp.Presentation.Helpers;
 using Internship_4_MarketplaceApp.Presentation.Menu;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Internship_4_MarketplaceApp.Presentation.Actions
 {
@@ -28,8 +24,7 @@ namespace Internship_4_MarketplaceApp.Presentation.Actions
                 BuyerMenu.DisplayBuyerMenu(marketplace, email);
                 return;
             }
-
-            if (SellerRepository.CheckIfSellerExists(marketplace, email, name))
+            else if (SellerRepository.CheckIfSellerExists(marketplace, email, name))
             {
                 SellerMenu.DisplaySellerMenu(marketplace, email);
                 return;

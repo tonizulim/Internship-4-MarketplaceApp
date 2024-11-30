@@ -4,7 +4,6 @@ using Internship_4_MarketplaceApp.Data.Entities.Models.Enums;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 
 namespace Internship_4_MarketplaceApp.Domain.Repositorioes
 {

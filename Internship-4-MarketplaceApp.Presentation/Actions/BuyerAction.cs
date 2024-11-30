@@ -3,12 +3,7 @@ using Internship_4_MarketplaceApp.Data.Entities.Models;
 using Internship_4_MarketplaceApp.Domain.Repositorioes;
 using Internship_4_MarketplaceApp.Presentation.Helpers;
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Runtime.InteropServices.ComTypes;
-using System.Text;
-using System.Threading.Tasks;
-using System.Xml.Serialization;
 
 namespace Internship_4_MarketplaceApp.Presentation.Actions
 {
